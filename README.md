@@ -12,15 +12,21 @@ FLASK_ENV=development
 FLASK_DEBUG=1
 ```
 ---
+## Start server
+### Flask
+```
+flask run
+```
+### Gunicorn
+```
+gunicorn --bind 0:5000 "app:create_app()"
+```
+--
 ## Endpoints
 ### Root
 URL
 ```
-POST {domain}/
-```
-BODY
-```
-Hello, search-service
+GET {domain}/
 ```
 ---
 ## Author
