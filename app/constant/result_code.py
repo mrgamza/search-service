@@ -3,6 +3,7 @@ from enum import Enum
 class ResultCode(Enum):
     SUCCESS = '0000', 'Success'
     NAVER_ERROR = '1000', 'Naver response code is not 200'
+    PARAM_ERROR = '2000', 'You missing required parameter'
     KNOWN_ERROR = '9000', 'Known error found'
     
     def __new__(cls, *args, **kwds):
