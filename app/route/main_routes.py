@@ -1,8 +1,8 @@
 from flask import Blueprint
 
 
-blue_print = Blueprint('main', __name__, url_prefix='/')
+blueprint = Blueprint('main', __name__, url_prefix='/')
 
-@blue_print.route('/')
+@blueprint.route('/', methods=['GET'])
 def hello():
     return 'Hello, search-service'

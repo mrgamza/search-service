@@ -1,10 +1,11 @@
+from flask import current_app
+from app.constant.result_code import ResultCode
+from app.helper.response_helper import ResponseHelper
+
 import os
 import urllib.request
 import ssl
 import json
-
-from app.constant.result_code import ResultCode
-from app.helper.response_helper import ResponseHelper
 
 
 def get_search(query):
@@ -28,6 +29,8 @@ def get_search(query):
     
     if naver_response.getcode() == 200:
         items = json.loads(naver_response.read())['items']
+        current_app.logger.info('Success')
         return responseHelper.response(ResultCode.SUCCESS, {'items': items})
     else:
+        current_app.logger.info('Fail')
         return responseHelper.response(ResultCode.NAVER_ERROR)
