@@ -14,7 +14,7 @@ def create_app():
     app = Flask(__name__)
     configure_logging()
     
-    from .route import main_routes, search_routes
+    from app.route import main_routes, search_routes
     app.register_blueprint(main_routes.blueprint)
     app.register_blueprint(search_routes.blueprint)
 

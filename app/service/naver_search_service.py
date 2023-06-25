@@ -1,6 +1,6 @@
 from flask import current_app
-from app.constant.result_code import ResultCode
-from app.helper.response_helper import ResponseHelper
+from ..constant.result_code import ResultCode
+from ..helper.response_helper import ResponseHelper
 
 import os
 import urllib.request

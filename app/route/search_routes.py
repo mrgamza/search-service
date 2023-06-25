@@ -1,10 +1,10 @@
 from flask import Blueprint, request
-from app.service import naver_search_service
+from ..service import naver_search_service
 
 
-blueprint = Blueprint('search', __name__, url_prefix='/')
+blueprint = Blueprint('search', __name__, url_prefix='/search')
 
-@blueprint.route('/search', methods=['GET'])
+@blueprint.route('/', methods=['GET'])
 def search():
     query = request.args.get('query')
     return naver_search_service.get_search(query)
